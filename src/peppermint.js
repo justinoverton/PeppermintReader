@@ -17,6 +17,70 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 var peppermintReader = peppermintReader || {};
+peppermintReader.model = peppermintReader.model || {};
+
+peppermintReader.model.profile = function() {
+    
+    this.name = '';
+    this.words = {}; //wordProfeciencies
+    this.storiesRead = [];
+};
+
+peppermintReader.model.wordProfeciency = function() {
+    
+    this.word = '';
+    this.phonicStats = new peppermintReader.stat();
+    this.sightStats = new peppermintReader.stat();
+    this.pictureStats = new peppermintReader.stat();
+    this.storyStats = new peppermintReader.stat();
+};
+
+peppermintReader.model.stat = function() {
+    
+    this.seen = 0;
+    this.correct = 0;
+    this.getAccuracy = function() {
+        
+        if(this.seen == 0)
+            return 0;
+        
+        return this.correct / this.seen;
+    };
+    
+    this.increment = function(isCorrect) {
+        this.seen++;
+        if(isCorrect) {
+            this.correct++;
+        }
+    };
+};
+
+peppermintReader.model.page = function() {
+    
+    this.illustrations = [
+        //TODO
+        /* zorder, visible, name */
+    ];
+    
+    //words of the story (eventually complex objects that reveal illustrations as they are read)
+    this.words = [];
+};
+
+peppermintReader.model.word = function() {
+    
+    this.word = '';
+    this.audio = ''; //base64, ref to file, what?
+    this.phonetic = ''; //Phonetic representation of the word that can be used during sounding it out
+    //this.syllables = []; //list of syllables that can be used when sounding it out
+};
+
+peppermintReader.model.story = function() {
+    this.pages = [];
+    this.wordSet = []; //distinct set of words within pages
+    this.author = '';
+    this.coverImage = '';
+    this.title = '';
+};
 
 (function(pr){
     
@@ -27,7 +91,6 @@ var peppermintReader = peppermintReader || {};
     
     var commands = {
         // annyang will capture anything after a splat (*) and pass it to the function.
-        // e.g. saying "Show me Batman and Robin" will call showFlickr('Batman and Robin');
         'pepper help *me': pr.help
     };
     
