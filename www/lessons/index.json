@@ -1,0 +1,68 @@
+[
+    {
+        "_t": "peppermintReader.model.story",
+        "title": "Old Man with a Beard",
+        "id": "OldManWithABeard",
+        "author": "Edward Lear",
+        "wordSet": [
+            "there",
+            "was",
+            "an",
+            "old",
+            "man",
+            "with",
+            "a",
+            "beard",
+            "who",
+            "said",
+            "it",
+            "is",
+            "just",
+            "as",
+            "I",
+            "feared",
+            "two",
+            "owls",
+            "and",
+            "hen",
+            "four",
+            "larks",
+            "wren",
+            "have",
+            "all",
+            "built",
+            "their",
+            "nests",
+            "in",
+            "my"
+        ],
+        "coverImage": "img/bookPlaceholder.png",
+        "pages": [
+            {
+                "_t": "peppermintReader.model.page",
+                "llustrations": [],
+                "words": "There was an Old Man with a beard"
+            },
+            {
+                "_t": "peppermintReader.model.page",
+                "llustrations": [],
+                "words": "Who said, \"It is just as I feared!"
+            },
+            {
+                "_t": "peppermintReader.model.page",
+                "llustrations": [],
+                "words": "Two Owls and a Hen,"
+            },
+            {
+                "_t": "peppermintReader.model.page",
+                "llustrations": [],
+                "words": "Four Larks and a Wren,"
+            },
+            {
+                "_t": "peppermintReader.model.page",
+                "llustrations": [],
+                "words": "Have all built their nests in my beard!\""
+            }
+        ]
+    }
+]

@@ -1,0 +1,12 @@
+<ion-view title="Lessons" id="page7">
+    <ion-content padding="true" class="has-header">
+        <div style="margin: 0px; line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
+            
+            <div class="row responsive-md">
+                <div class="col" ng-repeat="lesson in lessons">
+                    <img ng-src="{{lesson.coverImage}}" ng-href="#lesson/{{profile.name}}/{{lesson.id}}" />
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

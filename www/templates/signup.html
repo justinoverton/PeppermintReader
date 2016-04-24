@@ -1,0 +1,15 @@
+<ion-view title="Signup" id="page6">
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <form class="list">
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Name</span>
+                    <input type="text" placeholder="" ng-model="name" />
+                </label>
+                <br />
+                <span class="assertive" ng-if="error">{{error}}</span>
+            </ion-list>
+            <button type="button" ng-disabled="!name" ng-click="create()" id="signup-button3" class="button button-stable button-block button-balanced">Sign up</a>
+        </form>
+    </ion-content>
+</ion-view>
