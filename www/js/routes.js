@@ -38,15 +38,12 @@ angular.module('app.routes', [])
     templateUrl: 'templates/lessons.html',
     controller: 'lessonsCtrl'
   })
+  .state('lesson', {
+    url: '/lesson/:profileName/:lessonId',
+    templateUrl: 'templates/lesson.html',
+    controller: 'lessonCtrl'
+  });
 
-  .state('phonics', {
-    url: '/phonics/:profileName',
-    templateUrl: 'templates/phonics.html',
-    controller: 'phonicsCtrl'
-  })
-
-$urlRouterProvider.otherwise('/login')
-
+  $urlRouterProvider.otherwise('/login');
   
-
 });

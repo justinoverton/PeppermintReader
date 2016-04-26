@@ -33,30 +33,32 @@ peppermintReader.model.profile = function() {
 peppermintReader.model.wordProfeciency = function() {
     this._t = 'peppermintReader.model.wordProfeciency';
     this.word = '';
-    this.phonicStats = new peppermintReader.stat();
-    this.sightStats = new peppermintReader.stat();
-    this.pictureStats = new peppermintReader.stat();
-    this.storyStats = new peppermintReader.stat();
+    this.lastUpdated = 0;
+    this.phonicStats = new peppermintReader.model.stat();
+    this.sightStats = new peppermintReader.model.stat();
+    this.pictureStats = new peppermintReader.model.stat();
+    this.storyStats = new peppermintReader.model.stat();
 };
 
 peppermintReader.model.stat = function() {
     this._t = 'peppermintReader.model.stat';
     this.seen = 0;
     this.correct = 0;
-    this.getAccuracy = function() {
-        
-        if(this.seen == 0)
-            return 0;
-        
-        return this.correct / this.seen;
-    };
-    
-    this.increment = function(isCorrect) {
-        this.seen++;
-        if(isCorrect) {
-            this.correct++;
-        }
-    };
+};
+
+peppermintReader.model.stat.prototype.getAccuracy = function() {
+
+    if(this.seen === 0)
+        return 0;
+
+    return this.correct / this.seen;
+};
+
+peppermintReader.model.stat.prototype.increment = function(isCorrect) {
+    this.seen++;
+    if(isCorrect) {
+        this.correct++;
+    }
 };
 
 peppermintReader.model.page = function() {
@@ -75,6 +77,7 @@ peppermintReader.model.word = function() {
     this.word = '';
     this.audio = ''; //base64, ref to file, what?
     this.phonetic = ''; //Phonetic representation of the word that can be used during sounding it out
+    this.image = '';
     //this.syllables = []; //list of syllables that can be used when sounding it out
 };
 

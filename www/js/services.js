@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 angular.module('app.services', [])
 
 .service('storage', function() {
-    
+    console.log('init storage');
     var storage = window.localStorage;
     var parse = function(s) {
          return JSON.parse(s, function(key, value){
@@ -60,6 +60,7 @@ angular.module('app.services', [])
     
     this.add = function(p) {
         profiles.push(angular.extend(new peppermintReader.model.profileStub(), {name: p.name, avatar: p.avatar}));
+        p = angular.extend(new peppermintReader.model.profile(), p);
         storage.write('profiles', profiles);
         storage.write('profiles.' + p.name, p);
     };
@@ -78,21 +79,128 @@ angular.module('app.services', [])
     };
 }])
 
-.service('lessonService', ['$http', function($http) {
+.service('ttsService', [function() {
     
-    var lessons = [];
+    meSpeak.loadConfig("lib/mespeak/mespeak_config.json");
+    meSpeak.loadVoice("lib/mespeak/voices/en/en-us.json");
+      
+    this.play = function(phrases) {
+      
+      var arr = phrases.slice(0, phrases.length);
+      
+      function callback() {
+        if(arr.length > 0) {
+          var p = arr.shift();
+          if(p.audio) {
+            //TODO: Play sound file
+          }
+          //else
+          if(p.word) {
+            //TODO: Attempt to use IPA (phonetic alphabet) based voice
+            meSpeak.speak(p.word, {}, callback);
+          } else {
+            meSpeak.speak(p, {}, callback);
+          }
+        }
+      }
+      
+      callback();
+    };
+}])
+
+.service('lessonService', ['$http', '$q', function($http, $q) {
     
-    $http.get('lessons/index.json').then(function(resp){
+    var data = {
+      words: {},
+      lessons: []
+    };
+    
+    var promise = $http.get('lessons/index.json').then(function(resp){
         
-        for(var i=0; i<resp.data.length; i++){
-            lessons.push(resp.data[i]);
+      for(var i=0; i<resp.data.lessons.length; i++){
+        data.lessons.push(resp.data.lessons[i]);
+      }
+      data.words = resp.data.words;
+      
+      return data;
+    }, function(err){
+        $q.reject(err.data);
+    });
+    
+    this.list = function() {
+        return data.lessons;
+    };
+    
+    this.get = function(id) {
+      return promise.then(function(data){
+        for(var i=0; i<data.lessons.length; i++){
+          if(data.lessons[i].id == id) {
+            return data.lessons[i];
+          }
+        }
+        return null;
+      });
+    };
+    
+    function getAnswer(words, blacklist) {
+      var ans = null;
+      do {
+        ans = words[parseInt(Math.random() * words.length)];
+      } while(blacklist[ans] === true);
+      
+      return ans;
+    }
+  
+    function shuffle(arr) {
+      for(i = arr.length-1; i > 0; i--) {
+        var idx = parseInt(Math.random() * i);
+        var tmp = arr[i];
+        arr[i] = arr[idx];
+        arr[idx] = tmp;
+      }
+      return arr;
+    }
+    
+    this.planLesson = function(story, profile) {
+      
+      var plan = [];
+      for(var i=0; i < story.wordSet.length; i++) {
+        var w = story.wordSet[i];
+        var prof = profile.words[w];
+        if(!prof) {
+          prof = new peppermintReader.model.wordProfeciency();
+          prof.word = w;
+          profile.words[w] = prof;
         }
         
-    }, function(err){
-        console.log(err);
-    }); 
-       
-    this.list = function() {
-        return lessons;        
+        var bl = {};
+        bl[w] = true;
+        var a = getAnswer(story.wordSet, bl);
+        bl[a] = true;
+        var b = getAnswer(story.wordSet, bl);
+        
+        var answers = shuffle([data.words[w],data.words[a],data.words[b]]);
+        var types = ['sight']; //['phonic', 'sight'];
+        if(data.words[w].image) {
+          types.push('picture');
+        }
+        for(var j=0; j<types.length; j++) {
+          var stat = prof[types[j] + 'Stats'].getAccuracy();
+          var inc = (1 - stat) * 4;
+          for(var k=0; k<inc; k++){
+            plan.push({
+              activity: types[j], 
+              word: data.words[w],
+              rand: Math.random(),
+              a: answers[0],
+              b: answers[1],
+              c: answers[2]});
+          }
+        }
+      }
+      
+      shuffle(plan);
+      
+      return plan;
     };
 }]);

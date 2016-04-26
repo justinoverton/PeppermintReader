@@ -1,4 +1,217 @@
-[
+{
+  "words": {
+    "there": {
+      "_t": "peppermintReader.model.word",
+      "word": "there",
+      "audio": "",
+      "phonetic": "/ðɛɚ/",
+      "image": ""
+    },
+    "was": {
+      "_t": "peppermintReader.model.word",
+      "word": "was",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "an": {
+      "_t": "peppermintReader.model.word",
+      "word": "an",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "old": {
+      "_t": "peppermintReader.model.word",
+      "word": "old",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "man": {
+      "_t": "peppermintReader.model.word",
+      "word": "man",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "with": {
+      "_t": "peppermintReader.model.word",
+      "word": "with",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "a": {
+      "_t": "peppermintReader.model.word",
+      "word": "a",
+      "audio": "",
+      "phonetic": "/ə/",
+      "image": ""
+    },
+    "beard": {
+      "_t": "peppermintReader.model.word",
+      "word": "beard",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "who": {
+      "_t": "peppermintReader.model.word",
+      "word": "who",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "said": {
+      "_t": "peppermintReader.model.word",
+      "word": "said",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "it": {
+      "_t": "peppermintReader.model.word",
+      "word": "it",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "is": {
+      "_t": "peppermintReader.model.word",
+      "word": "is",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "just": {
+      "_t": "peppermintReader.model.word",
+      "word": "just",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "as": {
+      "_t": "peppermintReader.model.word",
+      "word": "as",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "I": {
+      "_t": "peppermintReader.model.word",
+      "word": "I",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "feared": {
+      "_t": "peppermintReader.model.word",
+      "word": "feared",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "two": {
+      "_t": "peppermintReader.model.word",
+      "word": "two",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "owls": {
+      "_t": "peppermintReader.model.word",
+      "word": "owls",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "and": {
+      "_t": "peppermintReader.model.word",
+      "word": "and",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "hen": {
+      "_t": "peppermintReader.model.word",
+      "word": "hen",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "four": {
+      "_t": "peppermintReader.model.word",
+      "word": "four",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "larks": {
+      "_t": "peppermintReader.model.word",
+      "word": "larks",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "wren": {
+      "_t": "peppermintReader.model.word",
+      "word": "wren",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "have": {
+      "_t": "peppermintReader.model.word",
+      "word": "have",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "all": {
+      "_t": "peppermintReader.model.word",
+      "word": "all",
+      "audio": "",
+      "phonetic": "/ɔl/",
+      "image": ""
+    },
+    "built": {
+      "_t": "peppermintReader.model.word",
+      "word": "built",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "their": {
+      "_t": "peppermintReader.model.word",
+      "word": "their",
+      "audio": "",
+      "phonetic": "/ðɛɚ/",
+      "image": ""
+    },
+    "nests": {
+      "_t": "peppermintReader.model.word",
+      "word": "nests",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "in": {
+      "_t": "peppermintReader.model.word",
+      "word": "in",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    },
+    "my": {
+      "_t": "peppermintReader.model.word",
+      "word": "my",
+      "audio": "",
+      "phonetic": "",
+      "image": ""
+    }
+  },
+  "lessons": [
     {
         "_t": "peppermintReader.model.story",
         "title": "Old Man with a Beard",
@@ -65,4 +278,4 @@
             }
         ]
     }
-]
+]}

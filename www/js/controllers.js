@@ -49,7 +49,44 @@ angular.module('app.controllers', [])
     $scope.lessons = lessonService.list();
 }])
    
-.controller('phonicsCtrl', function($scope) {
+.controller('lessonCtrl', ['$scope', '$stateParams', 'profileService', 'lessonService', function($scope, $stateParams, profileService, lessonService) {
+  $scope.profile = profileService.get($stateParams.profileName);
+  $scope.lesson = null;
+  $scope.plan = null;
+  $scope.currentActivity =null;
+  $scope.activityTemplate = null;
+  
+  lessonService.get($stateParams.lessonId).then(function(data){
+    $scope.lesson = data;
+    $scope.plan = lessonService.planLesson(data, $scope.profile);
     
-})
+    $scope.currentActivity = $scope.plan.shift();
+    $scope.activityTemplate = '';
+    if($scope.currentActivity.activity == 'phonic') {
+      $scope.activityTemplate = 'templates/phonic.html';
+    } else if($scope.currentActivity.activity == 'sight') {
+      $scope.activityTemplate = 'templates/sight.html';
+    } else if($scope.currentActivity.activity == 'picture') {
+      $scope.activityTemplate = 'templates/picture.html';
+    }
+  });
+  
+  $scope.answer = function(w) {
+    var stat = $scope.profile.words[w][$scope.currentActivity.activity + 'Stats'];
+    if(w == $scope.currentActivity.word.word) {
+      //correct!
+      //TODO: Some sort of transition animation
+      stat.increment(true);
+      //TODO: if plan is done show results of lesson
+      $scope.currentActivity = $scope.plan.shift();
+      profileService.save($scope.profile);
+      return true;
+    } else {
+      stat.increment(false);
+      //TODO: hint system
+      return false;
+    }
+  };
+  
+}]);
  

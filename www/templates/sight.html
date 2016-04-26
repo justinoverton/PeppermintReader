@@ -1,0 +1,15 @@
+<div class="" >
+  <!-- hear if="parseInt(currentActivity.rand * 2) % 2 == 0" -->
+  <pr-prompt say="['Select the word', currentActivity.word]"></pr-prompt>
+  <ion-list>
+      <ion-item class="item flashcard" ng-click="answer(currentActivity.a.word)">
+          <h1>{{currentActivity.a.word}}</h1>
+      </ion-item>
+      <ion-item class="item flashcard" ng-click="answer(currentActivity.b.word)">
+          <h1>{{currentActivity.b.word}}</h1>
+      </ion-item>
+      <ion-item class="item flashcard" ng-click="answer(currentActivity.c.word)">
+          <h1>{{currentActivity.c.word}}</h1>
+      </ion-item>
+  </ion-list>
+</div>

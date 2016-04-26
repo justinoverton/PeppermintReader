@@ -4,7 +4,7 @@
             
             <div class="row responsive-md">
                 <div class="col" ng-repeat="lesson in lessons">
-                    <img ng-src="{{lesson.coverImage}}" ng-href="#lesson/{{profile.name}}/{{lesson.id}}" />
+                    <a ng-href="#lesson/{{profile.name}}/{{lesson.id}}"><img ng-src="{{lesson.coverImage}}" /></a>
                 </div>
             </div>
         </div>
