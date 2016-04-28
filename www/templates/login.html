@@ -3,8 +3,8 @@
         <form class="list">
             <ion-list>
                 <ion-item class="item-thumbnail-left item-avatar" ng-href="#lessons/{{profile.name}}" ng-repeat="profile in profiles">
-                    <img ng-src="https://api.adorable.io/avatars/60/{{profile.name}}.png" />
-                    <h1>{{profile.name}}</h1>
+                  <pr-avatar size="60" name="profile.name"></pr-avatar>
+                  <h1>{{profile.name}}</h1>
                 </ion-item>
                 <button ui-sref="signup" class="button button-block button-balanced">New</button>
             </ion-list>

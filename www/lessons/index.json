@@ -1,213 +1,213 @@
 {
   "words": {
-    "there": {
-      "_t": "peppermintReader.model.word",
-      "word": "there",
-      "audio": "",
-      "phonetic": "/ðɛɚ/",
-      "image": ""
-    },
-    "was": {
-      "_t": "peppermintReader.model.word",
-      "word": "was",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "an": {
-      "_t": "peppermintReader.model.word",
-      "word": "an",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "old": {
-      "_t": "peppermintReader.model.word",
-      "word": "old",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "man": {
-      "_t": "peppermintReader.model.word",
-      "word": "man",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "with": {
-      "_t": "peppermintReader.model.word",
-      "word": "with",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
     "a": {
       "_t": "peppermintReader.model.word",
-      "word": "a",
+      "word":"a",
       "audio": "",
-      "phonetic": "/ə/",
-      "image": ""
-    },
-    "beard": {
-      "_t": "peppermintReader.model.word",
-      "word": "beard",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "who": {
-      "_t": "peppermintReader.model.word",
-      "word": "who",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "said": {
-      "_t": "peppermintReader.model.word",
-      "word": "said",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "it": {
-      "_t": "peppermintReader.model.word",
-      "word": "it",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "is": {
-      "_t": "peppermintReader.model.word",
-      "word": "is",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "just": {
-      "_t": "peppermintReader.model.word",
-      "word": "just",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "as": {
-      "_t": "peppermintReader.model.word",
-      "word": "as",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "I": {
-      "_t": "peppermintReader.model.word",
-      "word": "I",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "feared": {
-      "_t": "peppermintReader.model.word",
-      "word": "feared",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "two": {
-      "_t": "peppermintReader.model.word",
-      "word": "two",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "owls": {
-      "_t": "peppermintReader.model.word",
-      "word": "owls",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "and": {
-      "_t": "peppermintReader.model.word",
-      "word": "and",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "hen": {
-      "_t": "peppermintReader.model.word",
-      "word": "hen",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "four": {
-      "_t": "peppermintReader.model.word",
-      "word": "four",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "larks": {
-      "_t": "peppermintReader.model.word",
-      "word": "larks",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "wren": {
-      "_t": "peppermintReader.model.word",
-      "word": "wren",
-      "audio": "",
-      "phonetic": "",
-      "image": ""
-    },
-    "have": {
-      "_t": "peppermintReader.model.word",
-      "word": "have",
-      "audio": "",
-      "phonetic": "",
+      "phonetic": ["AH","EY"],
       "image": ""
     },
     "all": {
       "_t": "peppermintReader.model.word",
-      "word": "all",
+      "word":"all",
       "audio": "",
-      "phonetic": "/ɔl/",
+      "phonetic": ["AO L"],
+      "image": ""
+    },
+    "an": {
+      "_t": "peppermintReader.model.word",
+      "word":"an",
+      "audio": "",
+      "phonetic": ["AE N","AH N"],
+      "image": ""
+    },
+    "and": {
+      "_t": "peppermintReader.model.word",
+      "word":"and",
+      "audio": "",
+      "phonetic": ["AH N D","AE N D"],
+      "image": ""
+    },
+    "as": {
+      "_t": "peppermintReader.model.word",
+      "word":"as",
+      "audio": "",
+      "phonetic": ["AE Z","EH Z"],
+      "image": ""
+    },
+    "beard": {
+      "_t": "peppermintReader.model.word",
+      "word":"beard",
+      "audio": "",
+      "phonetic": ["B IH R D"],
       "image": ""
     },
     "built": {
       "_t": "peppermintReader.model.word",
-      "word": "built",
+      "word":"built",
       "audio": "",
-      "phonetic": "",
+      "phonetic": ["B IH L T"],
       "image": ""
     },
-    "their": {
+    "feared": {
       "_t": "peppermintReader.model.word",
-      "word": "their",
+      "word":"feared",
       "audio": "",
-      "phonetic": "/ðɛɚ/",
+      "phonetic": ["F IH R D"],
       "image": ""
     },
-    "nests": {
+    "four": {
       "_t": "peppermintReader.model.word",
-      "word": "nests",
+      "word":"four",
       "audio": "",
-      "phonetic": "",
+      "phonetic": ["F AO R"],
+      "image": ""
+    },
+    "have": {
+      "_t": "peppermintReader.model.word",
+      "word":"have",
+      "audio": "",
+      "phonetic": ["HH AE V"],
+      "image": ""
+    },
+    "hen": {
+      "_t": "peppermintReader.model.word",
+      "word":"hen",
+      "audio": "",
+      "phonetic": ["HH EH N"],
+      "image": ""
+    },
+    "i": {
+      "_t": "peppermintReader.model.word",
+      "word":"i",
+      "audio": "",
+      "phonetic": ["AY"],
       "image": ""
     },
     "in": {
       "_t": "peppermintReader.model.word",
-      "word": "in",
+      "word":"in",
       "audio": "",
-      "phonetic": "",
+      "phonetic": ["IH N"],
+      "image": ""
+    },
+    "is": {
+      "_t": "peppermintReader.model.word",
+      "word":"is",
+      "audio": "",
+      "phonetic": ["IH Z"],
+      "image": ""
+    },
+    "it": {
+      "_t": "peppermintReader.model.word",
+      "word":"it",
+      "audio": "",
+      "phonetic": ["IH T"],
+      "image": ""
+    },
+    "just": {
+      "_t": "peppermintReader.model.word",
+      "word":"just",
+      "audio": "",
+      "phonetic": ["JH AH S T","JH IH S T"],
+      "image": ""
+    },
+    "larks": {
+      "_t": "peppermintReader.model.word",
+      "word":"larks",
+      "audio": "",
+      "phonetic": ["L AA R K S"],
+      "image": ""
+    },
+    "man": {
+      "_t": "peppermintReader.model.word",
+      "word":"man",
+      "audio": "",
+      "phonetic": ["M AE N"],
       "image": ""
     },
     "my": {
       "_t": "peppermintReader.model.word",
-      "word": "my",
+      "word":"my",
       "audio": "",
-      "phonetic": "",
+      "phonetic": ["M AY"],
+      "image": ""
+    },
+    "nests": {
+      "_t": "peppermintReader.model.word",
+      "word":"nests",
+      "audio": "",
+      "phonetic": ["N EH S T S"],
+      "image": ""
+    },
+    "old": {
+      "_t": "peppermintReader.model.word",
+      "word":"old",
+      "audio": "",
+      "phonetic": ["OW L D"],
+      "image": ""
+    },
+    "owls": {
+      "_t": "peppermintReader.model.word",
+      "word":"owls",
+      "audio": "",
+      "phonetic": ["AW L Z"],
+      "image": ""
+    },
+    "said": {
+      "_t": "peppermintReader.model.word",
+      "word":"said",
+      "audio": "",
+      "phonetic": ["S EH D"],
+      "image": ""
+    },
+    "their": {
+      "_t": "peppermintReader.model.word",
+      "word":"their",
+      "audio": "",
+      "phonetic": ["DH EH R"],
+      "image": ""
+    },
+    "there": {
+      "_t": "peppermintReader.model.word",
+      "word":"there",
+      "audio": "",
+      "phonetic": ["DH EH R"],
+      "image": ""
+    },
+    "two": {
+      "_t": "peppermintReader.model.word",
+      "word":"two",
+      "audio": "",
+      "phonetic": ["T UW"],
+      "image": ""
+    },
+    "was": {
+      "_t": "peppermintReader.model.word",
+      "word":"was",
+      "audio": "",
+      "phonetic": ["W AA Z"],
+      "image": ""
+    },
+    "who": {
+      "_t": "peppermintReader.model.word",
+      "word":"who",
+      "audio": "",
+      "phonetic": ["HH UW"],
+      "image": ""
+    },
+    "with": {
+      "_t": "peppermintReader.model.word",
+      "word":"with",
+      "audio": "",
+      "phonetic": ["W IH DH","W IH TH"],
+      "image": ""
+    },
+    "wren": {
+      "_t": "peppermintReader.model.word",
+      "word":"wren",
+      "audio": "",
+      "phonetic": ["R EH N"],
       "image": ""
     }
   },

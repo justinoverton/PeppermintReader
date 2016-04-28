@@ -76,9 +76,27 @@ peppermintReader.model.word = function() {
     this._t = 'peppermintReader.model.word';
     this.word = '';
     this.audio = ''; //base64, ref to file, what?
-    this.phonetic = ''; //Phonetic representation of the word that can be used during sounding it out
+    this.phonetic = []; //Phonetic representation of the word that can be used during sounding it out
     this.image = '';
-    //this.syllables = []; //list of syllables that can be used when sounding it out
+};
+
+peppermintReader.model.word.prototype.isHomophone = function(other) {
+  
+  if(this.word === other.word) {
+    return true;
+  }
+  
+  for(var i=0; i<this.phonetic.length; i++) {
+    var a = this.phonetic[i];
+    for(var k=0; k<other.phonetic.length; k++) {
+      var b = other.phonetic[i];
+      if(a == b) {
+        return true;
+      }
+    }
+  }
+  
+  return false;
 };
 
 peppermintReader.model.story = function() {
@@ -90,56 +108,3 @@ peppermintReader.model.story = function() {
     this.title = '';
     this.id = '';
 };
-
-(function(pr){
-    
-    pr.help = function(phrase){
-        console.log(phrase);
-        alert('User needs help with "' + phrase + '"');
-    };
-    
-    var commands = {
-        // annyang will capture anything after a splat (*) and pass it to the function.
-        'pepper help *me': pr.help
-    };
-    
-    // Add our commands to annyang
-    annyang.addCommands(commands);
-
-    // Tell KITT to use annyang
-    SpeechKITT.annyang();
-
-    // Define a stylesheet for KITT to use
-    SpeechKITT.setStylesheet('lib/speechKitt/themes/flat.css');
-
-    // Render KITT's interface
-    SpeechKITT.vroom();
-    
-    annyang.start({ autoRestart: true, continuous: true });
-    
-    annyang.addCallback('error', function() {
-        console.log({error: arguments});
-    });
-    
-    annyang.addCallback('errorNetwork', function() {
-        console.log({errorNetwork: arguments});
-    });
-    
-    annyang.addCallback('errorPermissionBlocked', function() {
-        console.log({errorPermissionBlocked: arguments});
-    });
-    
-    annyang.addCallback('errorPermissionDenied', function() {
-        console.log({errorPermissionDenied: arguments});
-    });
-    
-    annyang.addCallback('resultMatch', function() {
-        console.log({resultMatch: arguments});
-    });
-    
-    annyang.addCallback('resultNoMatch', function() {
-        console.log({resultNoMatch: arguments});
-    });
-})(peppermintReader);
-
-

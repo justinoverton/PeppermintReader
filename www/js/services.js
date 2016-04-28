@@ -19,7 +19,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 angular.module('app.services', [])
 
 .service('storage', function() {
-    console.log('init storage');
     var storage = window.localStorage;
     var parse = function(s) {
          return JSON.parse(s, function(key, value){
@@ -110,6 +109,13 @@ angular.module('app.services', [])
 
 .service('lessonService', ['$http', '$q', function($http, $q) {
     
+    var hasMic = true;
+    //navigator.getUserMedia({audio: true}, function(){ hasMic = true;}, function(){});
+    
+    this.hasMic = function(){
+      return hasMic;
+    };
+    
     var data = {
       words: {},
       lessons: []
@@ -143,11 +149,20 @@ angular.module('app.services', [])
     };
     
     function getAnswer(words, blacklist) {
+      var tries = 0;
       var ans = null;
       do {
-        ans = words[parseInt(Math.random() * words.length)];
-      } while(blacklist[ans] === true);
+        
+        ans = data.words[words[parseInt(Math.random() * words.length)].toLowerCase()];
+        tries++;
+        
+        if(tries >= words.length) {
+          return null;
+        }
+        
+      } while(blacklist.some(function(bl) { return bl == ans || ans.isHomophone(bl); }));
       
+      blacklist.push(ans);
       return ans;
     }
   
@@ -165,7 +180,7 @@ angular.module('app.services', [])
       
       var plan = [];
       for(var i=0; i < story.wordSet.length; i++) {
-        var w = story.wordSet[i];
+        var w = story.wordSet[i].toLowerCase();
         var prof = profile.words[w];
         if(!prof) {
           prof = new peppermintReader.model.wordProfeciency();
@@ -173,13 +188,11 @@ angular.module('app.services', [])
           profile.words[w] = prof;
         }
         
-        var bl = {};
-        bl[w] = true;
-        var a = getAnswer(story.wordSet, bl);
-        bl[a] = true;
-        var b = getAnswer(story.wordSet, bl);
+        var bl = [data.words[w]];
+        var answers = shuffle([data.words[w],
+                               getAnswer(story.wordSet, bl),
+                               getAnswer(story.wordSet, bl)]);
         
-        var answers = shuffle([data.words[w],data.words[a],data.words[b]]);
         var types = ['sight']; //['phonic', 'sight'];
         if(data.words[w].image) {
           types.push('picture');
@@ -192,9 +205,8 @@ angular.module('app.services', [])
               activity: types[j], 
               word: data.words[w],
               rand: Math.random(),
-              a: answers[0],
-              b: answers[1],
-              c: answers[2]});
+              incorrectWords: {},
+              answers: answers});
           }
         }
       }

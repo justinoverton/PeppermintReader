@@ -1,3 +1,24 @@
 .flashcard {
   font-size: 20px;
 }
+
+.flashcard[disabled], .flashcard[disabled] h1 {
+  color: lightgray;
+}
+
+.incorrect h1:before {
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+  content: "";
+  color: red;
+  font-size: 20px;
+}

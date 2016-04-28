@@ -49,7 +49,7 @@ angular.module('app.controllers', [])
     $scope.lessons = lessonService.list();
 }])
    
-.controller('lessonCtrl', ['$scope', '$stateParams', 'profileService', 'lessonService', function($scope, $stateParams, profileService, lessonService) {
+.controller('lessonCtrl', ['$scope', '$stateParams', 'profileService', 'lessonService', 'ttsService', function($scope, $stateParams, profileService, lessonService, ttsService) {
   $scope.profile = profileService.get($stateParams.profileName);
   $scope.lesson = null;
   $scope.plan = null;
@@ -69,9 +69,12 @@ angular.module('app.controllers', [])
     } else if($scope.currentActivity.activity == 'picture') {
       $scope.activityTemplate = 'templates/picture.html';
     }
+    
+    $scope.hasMic = lessonService.hasMic();
   });
   
-  $scope.answer = function(w) {
+  $scope.answer = function(word) {
+    var w = word.word;
     var stat = $scope.profile.words[w][$scope.currentActivity.activity + 'Stats'];
     if(w == $scope.currentActivity.word.word) {
       //correct!
@@ -83,6 +86,9 @@ angular.module('app.controllers', [])
       return true;
     } else {
       stat.increment(false);
+      word.incorrect = true;
+      ttsService.play(['Oops, you picked', w]);
+      $scope.currentActivity.incorrectWords[w] = true;
       //TODO: hint system
       return false;
     }
